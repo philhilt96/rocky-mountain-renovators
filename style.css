@@ -44,12 +44,15 @@ clearfix
 img, video, iframe, object {
 	max-width: 100%;
 }
-/* Reset Bootstrap and background-color */
-html body {
+html, body {
+	width: 100%;
+	overflow-x: hidden;
 	background-color: #f2f2f2;
 	line-height: 1em;
-	padding: 0px;
 	font-family: 'Ubuntu', 'Arial', sans-serf;
+}
+h1 {
+	font-size: 1.8em;
 }
 /***************
 Navigation Bar
@@ -128,6 +131,8 @@ Picture with title
 	width: 220px;
 	position: absolute;
 	right: calc(50% - 110px);
+	border: 1px solid #fff;
+	border-radius: 50%;
 }
 .self-title {
 	width: 100%;
@@ -198,7 +203,6 @@ Description of services
 }
 .project-button a {
 	width: 200px;
-	heigth: 100%;
 	font-size: 1.4em;
 	text-align: center;
 	position: absolute;
@@ -213,23 +217,22 @@ Projects
 	padding-top: 100px;
 	text-align: center;
 }
-.projects {
-	width: 90px;
+.project-container {
+	width: 80%;
 	min-height: 1000px;
 	margin: 100px auto;
 	background-color: #65BB78;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	align-content: space-around;
 }
-.col {
-	height: 400px;
-	min-width: 200px;
-	margin: 50px 100px;
-	padding: 5px;
-	box-sizing: border-box;
-	border: 1px solid #000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.project {
+	height: 450px;
+	margin: 20px;
 	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 /***************
 Contact
@@ -253,6 +256,7 @@ Links
 ***************/
 nav a, .project-button a, .contact-container a, .mobile-button a {
 	color: white;
+	text-decoration: none;
 }
 nav a:hover, .project-button a:hover, .mobile-button a:hover,
 nav a:focus, .project-button a:focus, .mobile-button a:focus{
@@ -330,10 +334,14 @@ Media Queries for mobile/responsive
 		font-size: 1.2em;
 		line-height: 1.2em;
 	}
+	/* Projects */
+	.project-container {
+		width: 100%;
+	}
 	/* Button triangle */
 	.button-container {
-		width: 240px;
-		height: 60px;
+		width: 0;
+		height: 0;
 		margin: auto;
 		border-right: 120px solid #f2f2f2;
 		border-left: 120px solid #f2f2f2;
@@ -349,12 +357,14 @@ Media Queries for mobile/responsive
 		display: initial;
 		width: 240px;
 		height: 60px;
-		margin: auto;
 		padding-top: 10px;
 		font-size: 1.2em;
 		background-color: transparent;
 		position: absolute;
 		left: calc(50% - 120px);
 		text-align: center;
+	}
+	.contact-container {
+		font-size: 4em;
 	}
 } 
