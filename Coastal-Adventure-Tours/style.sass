@@ -1,0 +1,351 @@
+@import ../_boiler-plate
+
+/* Color sass variables */
+
+$nav-background: #FFF5CA
+$primary-background: #FFF9e0
+$secondary-background: #A4CBCF
+$primary-font-color: #08292C
+$secondary-font-color: #91325D
+$box-background: rgba(255,255,255,0.3)
+$button-border: #AC973B
+
+/* Font Variables */
+
+$primary-font: 'PT Sans', 'Ariel', sans-serif
+
+/* Body */
+
+body
+	font-family: $primary-font
+	line-height: 1.6rem
+	background: $primary-background
+
+h1
+	font-size: 1.8rem
+strong
+	color: $secondary-font-color
+	font-size: 1.2em
+	text-transform: uppercase
+	font-weight: 700
+
+/* Links */
+
+a
+	text-decoration: none
+	color: $primary-font-color
+a:hover,
+a:focus,
+a:active
+	color: $secondary-font-color
+	background: #fff
+	transition: .3s
+
+/* Buttons */
+
+.button,
+button
+	padding: 10px 20px
+	text-align: center
+	text-transform: uppercase
+	background: $nav-background
+	border: 1px solid #fff
+	border-radius: 3px
+
+.destination-button
+	display: block
+	margin: 10px 40px
+	font-size: 1.4rem
+
+.button:hover, 
+.button:focus,
+.button:active
+	border: 1px solid $button-border
+	border-radius: 3px
+
+.contact-button,
+button
+	background: #fff
+	color: $secondary-font-color
+	border: 1px solid $button-border
+
+.contact-button:hover,
+.contact-button:focus,
+.contact-button:active,
+button:hover,
+button:focus,
+button:active
+	background: $nav-background
+	color: $primary-font-color
+	border: 1px solid $primary-font-color
+
+/* Navigation */
+
+.main-nav 
+	width: 100%
+	position: fixed
+	top: 0
+	z-index: 100
+	background: $nav-background
+	color: $primary-font-color
+	box-shadow: 10px 2px 20px $primary-font-color
+	h1
+		padding: 15px
+		float: left
+		font-size: 1.6rem
+		a:hover 
+			background: $nav-background
+			color: $primary-font-color
+
+.nav-options 
+	display: none
+
+/* Background Images */
+
+.background
+	width: 100%
+	height: 700px
+	background-repeat: no-repeat
+	background-size: cover
+	background-attachment: fixed
+	display: flex
+	justify-content: center
+	align-items: center
+
+
+/* Home page */
+
+.background-one 
+	background-image: url('images/cortez-background.jpg')
+
+.clear-box
+	min-width: 30%
+	max-width: 70%
+	padding: 10px
+	line-height: 2rem
+	background: $box-background
+	border: 1px solid $primary-font-color
+	border-radius: 5px
+	text-align: center
+	text-transform: uppercase
+	align-items: center
+	p
+		font-size: 1.2rem
+		margin-bottom: 10px
+
+.reviews
+	width: 100%
+	text-align: center
+	line-height: 2rem
+	h1
+		margin: 25px
+
+.quote-one,
+.quote-two,
+.quote-three
+	display: none
+	width: 80%
+	margin: auto
+	font-size: 2rem
+	line-height: 2.6rem
+
+.quote-body,
+.quote-source
+	margin: 10px
+	padding: 10px
+
+.quote-body
+	font-style: italic
+
+.quote-source
+	font-size: 1.3rem
+	text-align: right
+
+.background-two
+	background-image: url('images/coastal-background.jpg')
+
+.clear-box-bottom
+	align-items: flex-end
+	p
+		font-size: 1.6rem
+
+/* Destinations page */
+
+.destination-heading
+	width: 90%
+	margin: 74px auto 10px auto
+	padding: 20px
+	text-transform: uppercase
+	text-align: center
+	background-color: $secondary-background
+
+.grid-container
+	width: 90%
+	margin: 10px auto
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+	justify-items: center
+
+
+.grid-item
+	width: 350px
+	min-height: 500px
+	margin: 20px 40px
+	background: $secondary-background
+	border: 1px solid $primary-font-color
+
+.grid-title
+	height: 50px
+	box-shadow: 0px 0px 10px $primary-font-color
+	font-size: 1.6rem
+	font-weight: 500
+	display: flex
+	justify-content: center
+	align-items: center
+	border-bottom: 1px solid $primary-font-color
+
+.grid-image
+	height: 200px
+	border-bottom: 1px solid $primary-font-color
+
+.grid-subtitle
+	min-height: 50px
+	box-sizing: border-box
+	padding: 20px 10px 0px 10px
+	line-height: 1.2rem
+	font-size: 1.2rem
+	text-transform: uppercase
+
+.grid-content
+	min-height: 200px
+	padding: 10px
+
+
+
+
+
+
+/* About us page */
+
+.about-background
+	margin-top: 54px
+	height: 442px
+	background-image: url('images/kayak.jpg')
+	background-size: auto
+
+
+.about-clear-box
+	min-width: 20%
+	p
+		padding: 10px
+		font-size: 2rem
+
+.about
+	width: 90%
+	margin: 20px auto
+	line-height: 3rem
+	text-align: center
+	p
+		width: 80%
+		margin: auto
+		font-size: 1.2rem
+		text-align: left
+		line-height: 2rem
+		padding-top: 20px
+		text-indent: 2rem
+
+.header-box
+	min-width: 90%
+	margin: auto
+	background: $button-border
+	border: none
+
+/* Contact Page */
+
+.contact-background
+	margin-top: 54px
+	height: 442px
+	background-image: url('images/ocean.jpg')
+	background-size: auto
+
+.contact-box
+	max-width: 60%
+	h1
+		padding: 10px
+	p
+		font-size: 1.6rem
+
+.contact-container
+	width: 90%
+	margin: 10px auto
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	text-align: center
+
+	h1
+		margin: 10px
+		font-weight: 700
+		line-height: 1.1em
+	p
+		font-size: 1.4rem
+
+.flex-item
+	width: 400px
+	min-height: 400px
+	margin: 10px 50px
+	padding: 10px
+	border: 1px solid $primary-font-color
+	border-radius: 3px
+
+.contact-info
+	margin: 20px 10px
+	font-size: 1.2rem
+	line-height: 2rem
+	text-align: left
+	p
+		font-size: 1.2rem
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	strong
+		font-size: 1.2rem
+		font-weight: 700
+		color: $primary-font-color
+	a
+		text-decoration: underline
+		background: transparent
+
+input[type="text"],
+input[type="email"]
+	height: 1rem
+	width: 50%
+
+/* Media query for larger screens */
+
+@media (min-width: 768px)
+	.nav-options /* make nav appear */
+		display: inline
+		float: right
+		li
+			float: left 
+			a
+				float: left
+				line-height: 1.6em
+				padding: 15px
+				width: 120px
+				text-align: center
+				text-transform: uppercase
+				border-left: 1px solid $primary-font-color
+
+	.background /* make backgrounds larger */
+		height: 1000px
+	.background-two
+		height: 700px
+
+	.about-background,
+	.contact-background
+		background-size: cover
+		height: 442px
+

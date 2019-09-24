@@ -1,0 +1,432 @@
+/* CSS RESET
+ *
+ * http://meyerweb.com/eric/tools/css/reset/ 
+ * v2.0 | 20110126
+ * License: none (public domain)*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img, video, iframe, object {
+  max-width: 100%;
+}
+
+/* Clearfix */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Color sass variables */
+/* Font Variables */
+/* Body */
+body {
+  font-family: "PT Sans", "Ariel", sans-serif;
+  line-height: 1.6rem;
+  background: #FFF9e0;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+strong {
+  color: #91325D;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #08292C;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #91325D;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* Buttons */
+.button,
+button {
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF5CA;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+.destination-button {
+  display: block;
+  margin: 10px 40px;
+  font-size: 1.4rem;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  border: 1px solid #AC973B;
+  border-radius: 3px;
+}
+
+.contact-button,
+button {
+  background: #fff;
+  color: #91325D;
+  border: 1px solid #AC973B;
+}
+
+.contact-button:hover,
+.contact-button:focus,
+.contact-button:active,
+button:hover,
+button:focus,
+button:active {
+  background: #FFF5CA;
+  color: #08292C;
+  border: 1px solid #08292C;
+}
+
+/* Navigation */
+.main-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: #FFF5CA;
+  color: #08292C;
+  box-shadow: 10px 2px 20px #08292C;
+}
+.main-nav h1 {
+  padding: 15px;
+  float: left;
+  font-size: 1.6rem;
+}
+.main-nav h1 a:hover {
+  background: #FFF5CA;
+  color: #08292C;
+}
+
+.nav-options {
+  display: none;
+}
+
+/* Background Images */
+.background {
+  width: 100%;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Home page */
+.background-one {
+  background-image: url("images/cortez-background.jpg");
+}
+
+.clear-box {
+  min-width: 30%;
+  max-width: 70%;
+  padding: 10px;
+  line-height: 2rem;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid #08292C;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  align-items: center;
+}
+.clear-box p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.reviews {
+  width: 100%;
+  text-align: center;
+  line-height: 2rem;
+}
+.reviews h1 {
+  margin: 25px;
+}
+
+.quote-one,
+.quote-two,
+.quote-three {
+  display: none;
+  width: 80%;
+  margin: auto;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.quote-body,
+.quote-source {
+  margin: 10px;
+  padding: 10px;
+}
+
+.quote-body {
+  font-style: italic;
+}
+
+.quote-source {
+  font-size: 1.3rem;
+  text-align: right;
+}
+
+.background-two {
+  background-image: url("images/coastal-background.jpg");
+}
+
+.clear-box-bottom {
+  align-items: flex-end;
+}
+.clear-box-bottom p {
+  font-size: 1.6rem;
+}
+
+/* Destinations page */
+.destination-heading {
+  width: 90%;
+  margin: 74px auto 10px auto;
+  padding: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #A4CBCF;
+}
+
+.grid-container {
+  width: 90%;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-items: center;
+}
+
+.grid-item {
+  width: 350px;
+  min-height: 500px;
+  margin: 20px 40px;
+  background: #A4CBCF;
+  border: 1px solid #08292C;
+}
+
+.grid-title {
+  height: 50px;
+  box-shadow: 0px 0px 10px #08292C;
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #08292C;
+}
+
+.grid-image {
+  height: 200px;
+  border-bottom: 1px solid #08292C;
+}
+
+.grid-subtitle {
+  min-height: 50px;
+  box-sizing: border-box;
+  padding: 20px 10px 0px 10px;
+  line-height: 1.2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.grid-content {
+  min-height: 200px;
+  padding: 10px;
+}
+
+/* About us page */
+.about-background {
+  margin-top: 54px;
+  height: 442px;
+  background-image: url("images/kayak.jpg");
+  background-size: auto;
+}
+
+.about-clear-box {
+  min-width: 20%;
+}
+.about-clear-box p {
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.about {
+  width: 90%;
+  margin: 20px auto;
+  line-height: 3rem;
+  text-align: center;
+}
+.about p {
+  width: 80%;
+  margin: auto;
+  font-size: 1.2rem;
+  text-align: left;
+  line-height: 2rem;
+  padding-top: 20px;
+  text-indent: 2rem;
+}
+
+.header-box {
+  min-width: 90%;
+  margin: auto;
+  background: #AC973B;
+  border: none;
+}
+
+/* Contact Page */
+.contact-background {
+  margin-top: 54px;
+  height: 442px;
+  background-image: url("images/ocean.jpg");
+  background-size: auto;
+}
+
+.contact-box {
+  max-width: 60%;
+}
+.contact-box h1 {
+  padding: 10px;
+}
+.contact-box p {
+  font-size: 1.6rem;
+}
+
+.contact-container {
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.contact-container h1 {
+  margin: 10px;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+.contact-container p {
+  font-size: 1.4rem;
+}
+
+.flex-item {
+  width: 400px;
+  min-height: 400px;
+  margin: 10px 50px;
+  padding: 10px;
+  border: 1px solid #08292C;
+  border-radius: 3px;
+}
+
+.contact-info {
+  margin: 20px 10px;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-align: left;
+}
+.contact-info p {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-info strong {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #08292C;
+}
+.contact-info a {
+  text-decoration: underline;
+  background: transparent;
+}
+
+input[type=text],
+input[type=email] {
+  height: 1rem;
+  width: 50%;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .nav-options {
+    display: inline;
+    float: right;
+  }
+  .nav-options li {
+    float: left;
+  }
+  .nav-options li a {
+    float: left;
+    line-height: 1.6em;
+    padding: 15px;
+    width: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    border-left: 1px solid #08292C;
+  }
+
+  .background {
+    height: 1000px;
+  }
+
+  .background-two {
+    height: 700px;
+  }
+
+  .about-background,
+.contact-background {
+    background-size: cover;
+    height: 442px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
