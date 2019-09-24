@@ -287,7 +287,11 @@ Media Queries for mobile/responsive
 	.description-triangle, .services-triangle, .button-triangle {
 		display: none;
 	}
-	.self-description, .self-description img, .services, .button-container, .project-button {
+	.self-description,
+	.self-description img,
+	.services,
+	.button-container,
+	.project-button {
 		float: none;
 	}
 	.self-description img {
