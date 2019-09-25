@@ -17,8 +17,10 @@ hamburger.addEventListener('click', function(e) {
 //Function to toggle menu
 function toggle() {
 	if(count % 2 === 1) {
-		wrapper.style.display = 'block';
+		wrapper.style.top = '0';
+		wrapper.style.animation = 'menu-down 0.7s ease-out';
 	} else {
-		wrapper.style.display = 'none';
+		wrapper.style.top = '-282px'
+		wrapper.style.animation = 'menu-up 0.7s ease-out';
 	}
 }
