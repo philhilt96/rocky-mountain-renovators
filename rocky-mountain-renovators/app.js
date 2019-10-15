@@ -6,7 +6,11 @@ let index = 0;
 
 function backgroundLoop() {
 	if(index < backgroundArr.length) {
-		background.style.background = `url(images/${backgroundArr[index]}.jpg) center no-repeat / cover fixed`;
+		background.style.backgroundImage = `url(images/${backgroundArr[index]}.jpg)`;
+		background.style.backgroundPosition = 'center';
+		background.style.backgroundRepeat = 'no-repeat';
+		background.style.backgroundSize = 'cover';
+		background.style.backgroundAttatchment = 'fixed';
 		index++;
 	} else {
 		index = 0;
