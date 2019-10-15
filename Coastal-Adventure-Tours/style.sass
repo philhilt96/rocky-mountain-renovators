@@ -156,7 +156,8 @@ button:active
 	display: flex
 	position: absolute
 	width: 100vw
-	height: 70vh
+	min-height: 70vh
+	max-height: 90vh
 	justify-content: center
 	align-items: center
 	background: $nav-background
@@ -394,6 +395,82 @@ input[type="text"],
 input[type="email"]
 	height: 1rem
 	width: 50%
+
+/* Book Now Page */
+
+.book-container
+	width: 70%
+	min-height: 50vh
+	margin: 124px auto 0 auto
+	display: flex
+	flex-flow: column wrap
+	text-align: center
+	align-items: center
+	background: $secondary-background
+
+.book-header
+	width: 100%
+	margin: 20px 0
+	text-transform: uppercase
+
+.tour-select
+	width: 100%
+	margin: 10px 0
+	display: flex
+	flex-flow: row wrap
+	justify-content: center
+	.button
+		min-width: 30%
+		margin: 10px 30px
+		text-align: center
+		border: 1px solid $primary-font-color
+
+.tour-dates
+	width: 90%
+	margin: 10px auto
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-flow: row wrap
+	background: $primary-background
+	box-sizing: border-box
+	border: 1px solid $primary-font-color
+	h1,
+	h2
+		width: 80%
+		margin: 0 auto
+		background: $secondary-background
+		margin: 10px
+		padding: 10px 0px
+	h1
+		margin-top: 20px
+	.button
+		min-width: 15%
+		margin: 10px 
+		border: 1px solid $primary-font-color
+
+.tour-info
+	width: 90%
+	margin: 10px auto
+	display: flex
+	flex-flow: row wrap
+	justify-content: center
+	align-items: center
+	background-color: $primary-background
+	padding: 20px
+	box-sizing: border-box
+	border: 1px solid $primary-font-color
+	input
+		height: 2rem
+		width: 40%
+		margin: 5px 20px
+		padding: 0 5px
+
+.tour-submit
+	width: 30%
+	display: none
+	margin: 10px auto
+	font-size: 1rem
 
 /* Media query for larger screens */
 

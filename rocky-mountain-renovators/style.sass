@@ -1,0 +1,308 @@
+@import ../_boiler-plate
+
+/* Sass variables */
+
+$primary-font: 'PT Sans', sans-serif
+$primary-background: #0C2D6C
+$secondary-background: #325395
+$overlay: rgba(255, 255, 255, 0.5)
+
+html
+	scroll-behavior: smooth
+	overflow: auto
+
+body
+	font-family: $primary-font
+
+
+/* Navigation and logo */
+
+nav
+	height: 64px
+	width: 100%
+	margin-top: 64px
+	position: fixed
+	background: $primary-background
+	box-shadow: 2px 1px 7px #97b0de
+	z-index: 10
+	transition: margin 0.3s linear
+	.hamburger-container,
+	.toggle
+		display: none
+	.nav-options
+		width: 50%
+		float: right
+		display: flex
+		justify-content: space-evenly
+		align-items: center
+		li
+			float: right
+			font-size: 1.5rem
+			padding: 20px
+			a
+				text-decoration: none
+				color: #fff
+
+.logo img
+	height: 192px
+	position: fixed
+	margin-left: 50px
+	z-index: 10
+	transition: height 0.3s linear
+
+/* Before and after background image cycle */
+
+.background
+	height: 100vh
+	width: 100vw
+	display: flex
+	justify-content: center
+	align-items: center
+	background: #fff
+	background-size: cover
+	background-repeat: no-repeat
+	transition: background 1s linear
+
+/* Overly message with border animation */
+
+.quality-container
+	background: $overlay
+	border-radius: 5px
+	.quality-message
+		padding: 40px
+		text-align: center
+		position: relative
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		line-height: 2.4rem
+		opacity: 0
+		text-transform: uppercase
+		animation: show-text 2s forwards
+		h1
+			font-size: 2rem
+			margin-bottom: 10px
+		p
+			font-size: 1.6rem
+	.quality-message::before,
+	.quality-message::after
+		content: ''
+		position: absolute
+	.quality-message::before
+		width: 90%
+		height: 90%
+		border-left: 2px solid #000
+		border-right: 2px solid #000
+		animation: border-sides 1.6s ease-in-out
+	.quality-message:after
+		width: 95%
+		height: 80%
+		border-top: 2px solid #000
+		border-bottom: 2px solid #000
+		animation: border-top 1.6s ease-in-out
+
+@keyframes show-text
+	from
+		opacity: 0
+	to
+		opacity: 1
+
+@keyframes border-sides
+	from
+		transform: scale(1, 0)
+		opacity: 0
+	to
+		transform: scale(1, 1)
+		opacity: 1
+
+@keyframes border-top
+	from
+		transform: scale(0, 1)
+		opacity: 0
+	to
+		transform: scale(1, 1)
+		opacity: 1
+
+/* About Section and Contact Section */
+
+#about,
+#contact
+	height: auto
+	width: 100%
+	padding: 128px 0px 64px 0px
+	background: rgb(12,45,108)
+	background: linear-gradient(45deg, rgba(12,45,108,1) 0%, rgba(76,104,154,1) 46%, rgba(142,151,167,1) 100%)
+	h1,
+	p
+		width: 60%
+		margin: auto
+		padding: 40px 0
+		color: #fff
+	h1
+		font-size: 1.8rem
+		text-decoration: underline
+		text-align: center
+	p
+		line-height: 2rem
+		font-size: 1.4rem
+
+#contact p
+	text-align: center
+	a
+		color: #fff
+
+.gallery-button
+	width: 120px
+	height: 40px
+	margin: 10px auto
+	display: flex
+	justify-content: center
+	align-items: center
+	text-decoration: none
+	font-size: 1.2rem
+	background: $primary-background
+	color: #fff
+	border: 1px solid #fff
+	border-radius: 5px
+
+/* Photo gallery */
+
+#gallery
+	width: 60%
+	margin: auto
+	padding-top: 128px
+	font-size: 1.8rem
+	text-decoration: underline
+	text-align: center
+
+.gallery-container
+	width: 90%
+	height: auto
+	margin: auto
+	padding: 64px 0
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+
+.overlay
+	height: 100vh
+	width: 100vw
+	position: fixed
+	z-index: 0
+	top: 0
+
+.photo
+	height: 300px
+	margin: 10px
+	z-index: 1
+	box-sizing: border-box
+	cursor: pointer
+	img
+		height: 100%
+		border: 1px solid #000
+
+.photo-enlarge
+	height: 67.5vw
+	width: 90vw
+	position: fixed
+	display: none
+	justify-content: space-between
+	align-items: center
+	z-index: 100
+	top: calc(50% - 32.5vw)
+	left: 5vw
+	background: #fff
+	border: 1px solid #000
+	img
+		width: 90vw
+		height: 100%
+	.arrow-left,
+	.arrow-right
+		width: 50px
+		height: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+		background: $overlay
+		z-index: 10
+		cursor: pointer
+		.photo-close
+			width: 40px
+			height: 40px
+			padding: 5px
+			position: absolute
+			background: $overlay
+			top: 0
+			right: 0
+	.arrow-left:hover,
+	.arrow-right:hover,
+	.arrow-left:active,
+	.arrow-right:active
+		background: $overlay
+	#enlarged-image
+		position: absolute
+
+/* Media Query for smaller screens */
+
+@media screen and (max-width: 768px)
+	nav
+		.hamburger-container,
+		.toggle
+			height: 64px
+			width: 64px
+			position: absolute
+			display: flex
+			right: calc(10% - 32px)
+		.hamburger-container
+			display: flex
+			justify-content: center
+			align-items: center
+			.middle-bar
+				width: 54px
+				height: 5px
+				background: #fff
+				border-radius: 5px
+			.middle-bar::before,
+			.middle-bar::after
+				content: ''
+				position: absolute
+				width: 54px
+				height: 5px
+				background: #fff
+				border-radius: 5px
+			.middle-bar::before
+				top: 10px
+			.middle-bar::after
+				bottom: 10px
+		.toggle
+			opacity: 0
+			z-index: 10
+		.nav-options
+			display: block
+			margin-top: 64px
+			position: absolute
+			right: -50%
+			li
+				width: 100%
+				background: $secondary-background
+				text-align: center
+				box-sizing: border-box
+				border: 1px solid #fff
+		.toggle:checked ~ .nav-options
+			right: 0
+			transition: right 0.7s ease-in-out
+		.toggle:checked ~ .hamburger-container .hamburger-menu
+			transform: rotate(135deg)
+			transition: transform 0.3s linear
+		.toggle:checked ~ .hamburger-container .middle-bar::before,
+		.toggle:checked ~ .hamburger-container .middle-bar::after
+			transform: rotate(90deg)
+			transition: transform 0.3s linear
+			top: 0
+	.logo img
+		margin-left: 0
+
+
+
+
+
