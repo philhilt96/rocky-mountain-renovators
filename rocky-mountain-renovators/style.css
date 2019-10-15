@@ -266,7 +266,7 @@ nav .nav-options li a {
 
 .photo {
   height: 300px;
-  margin: 10px;
+  margin: 10px auto;
   z-index: 1;
   box-sizing: border-box;
   cursor: pointer;
@@ -277,20 +277,20 @@ nav .nav-options li a {
 }
 
 .photo-enlarge {
-  height: 67.5vw;
-  width: 90vw;
+  height: 600px;
+  width: 700px;
   position: fixed;
   display: none;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  top: calc(50% - 32.5vw);
-  left: 5vw;
+  top: calc(50% - 300px);
+  left: calc(50% - 350px);
   background: #fff;
   border: 1px solid #000;
 }
 .photo-enlarge img {
-  width: 90vw;
+  width: 100%;
   height: 100%;
 }
 .photo-enlarge .arrow-left,
@@ -394,6 +394,13 @@ nav .toggle:checked ~ .hamburger-container .middle-bar::after {
 
   .logo img {
     margin-left: 0;
+  }
+
+  .photo-enlarge {
+    width: 400px;
+    height: 300px;
+    top: calc(50% - 150px);
+    left: calc(50% - 200px);
   }
 }
 
