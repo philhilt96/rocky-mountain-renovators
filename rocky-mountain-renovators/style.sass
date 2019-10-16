@@ -13,6 +13,7 @@ html
 
 body
 	font-family: $primary-font
+	overflow: hidden
 
 
 /* Navigation and logo */
@@ -177,7 +178,7 @@ nav
 	text-align: center
 
 .gallery-container
-	width: 90%
+	min-width: 90%
 	height: auto
 	margin: auto
 	padding: 64px 0
@@ -188,18 +189,22 @@ nav
 	height: 100vh
 	width: 100vw
 	position: fixed
-	z-index: 0
+	z-index: -1
 	top: 0
 
 .photo
 	height: 300px
-	margin: 10px auto
+	margin: 10px
 	z-index: 1
-	box-sizing: border-box
 	cursor: pointer
+	display: flex
+	justify-content: center
+	align-items: center
 	img
-		height: 100%
+		height: 300px
+		width: 400px
 		border: 1px solid #000
+		box-sizing: border-box
 
 .photo-enlarge
 	height: 600px
@@ -226,14 +231,15 @@ nav
 		background: $overlay
 		z-index: 10
 		cursor: pointer
-		.photo-close
-			width: 40px
-			height: 40px
-			padding: 5px
-			position: absolute
-			background: $overlay
-			top: 0
-			right: 0
+	.photo-close
+		width: 40px
+		height: 40px
+		padding: 5px
+		position: absolute
+		z-index: 10
+		background: $overlay
+		top: 0
+		right: 0
 	.arrow-left:hover,
 	.arrow-right:hover,
 	.arrow-left:active,
@@ -301,11 +307,22 @@ nav
 			top: 0
 	.logo img
 		margin-left: 0
+	.gallery-container
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+		.photo
+			height: 225px
+		.photo img
+			width: 300px
+			height: 225px
 	.photo-enlarge
-		width: 400px
-		height: 300px
+		width: 90vw
+		height: 67.5vw
 		top: calc(50% - 150px)
-		left: calc(50% - 200px)
+		left: 5vw
+
+@media screen and (max-width: 350px)
+	.logo img
+		width: 128px
 
 
 

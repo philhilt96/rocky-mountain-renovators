@@ -39,48 +39,56 @@ addEventListener('load', function() {
 
 // Photo gallery
 
-let gallery = document.querySelectorAll('.photo');
+let gallery = document.querySelector('.gallery-container');
+let photo = document.querySelectorAll('.photo');
+let galleryArr = [];
+let arrIndex = 0;
 let img = document.querySelector('.photo-enlarge');
 let imgClose = document.querySelector('.photo-close');
 let leftArrow = document.querySelector('.arrow-left');
 let rightArrow = document.querySelector('.arrow-right');
 let overlay = document.querySelector('.overlay');
 
-// enlarge image on click
-function clickLoop() { 
-
-	for(let i = 0; i < gallery.length; i++) {
-		let count = 0;
-		gallery[i].addEventListener('click', function() {
-			overlay.style.background = 'rgba(255,255,255,0.7)';
-			overlay.style.zIndex = '100';
-			img.style.display = 'flex';
-			img.lastElementChild.src = gallery[i].lastElementChild.src;
-			count = i;
-			leftArrow.addEventListener('click', function() {
-				count--;
-				if(count >= 0) {
-					img.lastElementChild.src = gallery[count].lastElementChild.src;
-				} else {
-					count = 0;
-				};
-			});
-			rightArrow.addEventListener('click', function() {
-				count++;
-				if(count <= 18) {
-					img.lastElementChild.src = gallery[count].lastElementChild.src;
-				} else {
-					count = 18;
-				}
-			});
-		});
-	}
+// push image sources into galleryArr
+for(let i = 0; i < photo.length; i++) {
+	galleryArr.push(photo[i].firstElementChild.src);
 }
 
-clickLoop();
+// enlarge image on click
+gallery.addEventListener('click', displayTarget);
 
+function displayTarget(e) {
+	overlay.style.background = 'rgba(255,255,255,0.7)';
+	overlay.style.zIndex = '100';
+	img.style.display = 'flex';
+	img.lastElementChild.src = e.target.src;
+	arrIndex = galleryArr.indexOf(e.target.src);
+}
+
+// move left through gallery
+
+leftArrow.addEventListener('click', function() {
+	if(arrIndex > 0) {
+		arrIndex--;
+	} else {
+		arrIndex = 0;
+	}
+	img.lastElementChild.src = galleryArr[arrIndex];
+});
+
+// move right through gallery
+
+rightArrow.addEventListener('click', function() {
+	if(arrIndex < 18) {
+		arrIndex++;
+	} else {
+		arrIndex = 18;
+	}
+	img.lastElementChild.src = galleryArr[arrIndex];
+})
 
 // close enlarged image
+
 imgClose.addEventListener('click', function() {
 	img.style.display = 'none';
 	overlay.style.background = 'rgba(255,255,255,0)';

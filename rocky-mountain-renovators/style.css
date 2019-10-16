@@ -57,6 +57,7 @@ html {
 
 body {
   font-family: "PT Sans", sans-serif;
+  overflow: hidden;
 }
 
 /* Navigation and logo */
@@ -248,7 +249,7 @@ nav .nav-options li a {
 }
 
 .gallery-container {
-  width: 90%;
+  min-width: 90%;
   height: auto;
   margin: auto;
   padding: 64px 0;
@@ -260,20 +261,24 @@ nav .nav-options li a {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  z-index: 0;
+  z-index: -1;
   top: 0;
 }
 
 .photo {
   height: 300px;
-  margin: 10px auto;
+  margin: 10px;
   z-index: 1;
-  box-sizing: border-box;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .photo img {
-  height: 100%;
+  height: 300px;
+  width: 400px;
   border: 1px solid #000;
+  box-sizing: border-box;
 }
 
 .photo-enlarge {
@@ -304,12 +309,12 @@ nav .nav-options li a {
   z-index: 10;
   cursor: pointer;
 }
-.photo-enlarge .arrow-left .photo-close,
-.photo-enlarge .arrow-right .photo-close {
+.photo-enlarge .photo-close {
   width: 40px;
   height: 40px;
   padding: 5px;
   position: absolute;
+  z-index: 10;
   background: rgba(255, 255, 255, 0.5);
   top: 0;
   right: 0;
@@ -396,11 +401,27 @@ nav .toggle:checked ~ .hamburger-container .middle-bar::after {
     margin-left: 0;
   }
 
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .gallery-container .photo {
+    height: 225px;
+  }
+  .gallery-container .photo img {
+    width: 300px;
+    height: 225px;
+  }
+
   .photo-enlarge {
-    width: 400px;
-    height: 300px;
+    width: 90vw;
+    height: 67.5vw;
     top: calc(50% - 150px);
-    left: calc(50% - 200px);
+    left: 5vw;
+  }
+}
+@media screen and (max-width: 350px) {
+  .logo img {
+    width: 128px;
   }
 }
 
