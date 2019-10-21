@@ -66,8 +66,8 @@ nav {
   width: 100%;
   margin-top: 64px;
   position: fixed;
-  background: #0C2D6C;
-  box-shadow: 2px 1px 7px #97b0de;
+  background: #801515;
+  box-shadow: 2px 1px 7px #857373;
   z-index: 10;
   transition: margin 0.3s linear;
 }
@@ -192,8 +192,8 @@ nav .nav-options li a {
   height: auto;
   width: 100%;
   padding: 128px 0px 64px 0px;
-  background: #0c2d6c;
-  background: linear-gradient(45deg, #0c2d6c 0%, #4c689a 46%, #8e97a7 100%);
+  background: #3c0c0c;
+  background: linear-gradient(45deg, #3c0c0c 0%, #c32727 71%, #fee8e8 100%);
 }
 #about h1,
 #about p,
@@ -232,7 +232,7 @@ nav .nav-options li a {
   align-items: center;
   text-decoration: none;
   font-size: 1.2rem;
-  background: #0C2D6C;
+  background: #801515;
   color: #fff;
   border: 1px solid #fff;
   border-radius: 5px;
@@ -377,7 +377,7 @@ nav .hamburger-container .middle-bar::after {
   }
   nav .nav-options li {
     width: 100%;
-    background: #325395;
+    background: #AA3838;
     text-align: center;
     box-sizing: border-box;
     border: 1px solid #fff;
