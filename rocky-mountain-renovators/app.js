@@ -4,6 +4,12 @@ let background = document.querySelector('.background');
 let backgroundArr = ['basement', 'store-front-before', 'store-front-after', 'stairs-before', 'stairs-after', 'patio-before', 'patio-after']
 let index = 0;
 
+// Cache background images
+
+for(let i = 0; i < backgroundArr.length; i ++){
+	new Image().src = `images/${backgroundArr[i]}.jpg`;
+}
+
 function backgroundLoop() {
 	if(index < backgroundArr.length) {
 		background.style.backgroundImage = `url(images/${backgroundArr[index]}.jpg)`;
@@ -92,5 +98,5 @@ rightArrow.addEventListener('click', function() {
 imgClose.addEventListener('click', function() {
 	img.style.display = 'none';
 	overlay.style.background = 'rgba(255,255,255,0)';
-	overlay.style.zIndex = '0';
+	overlay.style.zIndex = '-1';
 })
